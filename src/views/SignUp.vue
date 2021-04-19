@@ -1,9 +1,9 @@
 <template>
-    <div class="">
-        <div class="">
-            <h1>Sign Up</h1>
+    <div class="row">
+        <div class="col-12 text-center mb-9">
+            <h1>Criar conta</h1>
         </div>
-        <div class="">
+        <div class="col-sm-6 m-auto">
             <div v-if="errorMessage !== ''" class="" role="alert">
                 {{ errorMessage }}
             </div>
@@ -11,19 +11,19 @@
                 {{ successMessage }}
             </div>
             <form @submit.prevent="signupRequest" id="signup-form">
-                <div class="">
-                    <div class="">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" v-model="email" class="">
+                <div class="container">
+                    <div class="mb-3">
+                       
+                        <input type="email" id="email" v-model="email" class=" form-control form-control-lg input" placeholder="Email" >
+                    </div>
+                    <div class="mb-3">
+                        
+                        <input type="password" id="password" v-model="password" class=" form-control form-control-lg input" placeholder="Senha">
                     </div>
                     <div class="">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" v-model="password" class="">
-                    </div>
-                    <div class="">
-                        <button v-bind:disabled="xhrRequest" v-bind:class="{disabled: xhrRequest}" class="">
-                            <span v-if="! xhrRequest">Sign Up</span>
-                            <span v-if="xhrRequest">Please Wait...</span>
+                        <button v-bind:disabled="xhrRequest" v-bind:class="{disabled: xhrRequest}" class="btn btn-primary mb-4">
+                            <span v-if="! xhrRequest">Registrar-se</span>
+                            <span v-if="xhrRequest">Carregando...</span>
                         </button>
                         <div v-if="xhrRequest" class="" role="status">
                             <span >Loading...</span>
@@ -31,8 +31,8 @@
                     </div>
                     <div class="">
                         <p>
-                            Already have an account? 
-                            <router-link to="/login">Login</router-link>
+                            Já possui conta?
+                            <router-link to="/login">Entrar</router-link>
                         </p>
                     </div>
                 </div>
@@ -65,7 +65,7 @@ export default {
                 .auth()
                 .createUserWithEmailAndPassword(v.email, v.password).then(
                 () => {
-                    v.successMessage = "Register Successfully.";
+                    v.successMessage = "Registrado com Sucesso.";
                     v.xhrRequest = false;
                 },
                 ( error ) => {

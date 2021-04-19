@@ -1,15 +1,21 @@
 <template>
     <div>
-        <h3>Esqueci a senha</h3>
-        <div v-if="MsgError !== ''" class="" role="alert">
+        <div  class="col-12 text-center mb-9">
+             <h3>Esqueci a senha</h3>
+        </div>
+       
+        <div v-if="MsgError !== ''" class="alert alert-info" role="alert">
                 {{ MsgError }}
             </div>
-        <div v-if="MgsSucess !== ''" class="" role="alert">
+        <div v-if="MgsSucess !== ''" class="alert alert-info" role="alert">
                 {{ MgsSucess }}
             </div>
         <form @submit.prevent="forgotPasswordt">
-        <input type="email"  v-model="email"  placeholder="Email">
-        <button>Forgot</button>
+        <input type="email"  v-model="email" class=" form-control form-control-lg input" placeholder="Coloque seu email">
+        <div class="mt-3">
+            <button class="btn btn-primary">Enviar Email</button>
+        </div>
+        
         </form>
     </div>
 </template>

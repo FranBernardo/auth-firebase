@@ -1,41 +1,45 @@
 <template>
-    <div class="">
-        <div class="">
-            <h1>Log In</h1>
+    <div class="row">
+        <div class="col-12 text-center mb-9">
+            <h1>Login </h1>
+            
+            
         </div>
-        <div class="">
+        <div class="col-sm-6 m-auto">
             <div v-if="errorMessage !== ''" class="" role="alert">
                 {{ errorMessage }}
             </div>
             <div v-if="successMessage !== ''" class="" role="alert">
                 {{ successMessage }}
             </div>
-            <form @submit.prevent="loginRequest" id="login-form">
-                <div class="">
-                    <div class="">
-                        <label for="email">Email Address</label>
-                        <input type="email" v-model="email" id="email" class="">
+            <form @submit.prevent="loginRequest" id="login-form" class="form">
+                <div class="container">
+                    <div class="mb-3">
+                       
+                        <input type="email" v-model="email" id="email" class=" form-control form-control-lg input" placeholder="Email">
+                    </div>
+                    <div class="m-top">
+                        
+                        <input type="password" v-model="password" id="password" class="form-control form-control-lg input" placeholder="Senha">
+                        <p class="mt-2">Esqueceu sua senha? <router-link to="/forgot">clique aqui</router-link></p>
                     </div>
                     <div class="">
-                        <label for="password">Password</label>
-                        <input type="password" v-model="password" id="password" class="">
-                        <p>Forgot password? <router-link to="/forgot">Forgot</router-link></p>
-                    </div>
-                    <div class="">
-                        <button v-bind:disabled="xhrRequest" v-bind:class="{disabled: xhrRequest}" class="">
-                            <span v-if="! xhrRequest">Login</span>
-                            <span v-if="xhrRequest">Please Wait...</span>
+                        <button v-bind:disabled="xhrRequest" v-bind:class="{disabled: xhrRequest}" class="btn btn-danger mb-4">
+                            <span v-if="! xhrRequest">Entrar</span>
+                            <span v-if="xhrRequest">Carregando...</span>
                         </button>
                         <div v-if="xhrRequest" class="" role="status">
                             <span class="">Loading...</span>
                         </div>
                     </div>
                     <div class="">
-                        <p>Don't have an account? <router-link to="/signup">Sign Up</router-link></p>
+                        <p>Não possui conta? <router-link to="/signup">Criar conta</router-link></p>
                     </div>
                 </div>
+                <img src=".././assets/foods-go-logo.png" class="rounded mx-auto d-block" alt="">
             </form>
         </div>
+        
     </div>
 </template>
 <script>
@@ -79,5 +83,20 @@ export default {
     position:relative;
     top:6px;
     left:10px;
+}
+img{
+    
+  width: 100px;
+  margin: 10px 0 40px;
+
+}
+.input {
+  flex: 1;
+  height: 30px;
+  color: #777;
+  font-size: 15px;
+  width: 60%;
+  margin: auto;
+  border: 1px solid #ddd;
 }
 </style>
