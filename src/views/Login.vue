@@ -19,6 +19,7 @@
                     <div class="">
                         <label for="password">Password</label>
                         <input type="password" v-model="password" id="password" class="">
+                        <p>Forgot password? <router-link to="/forgot">Forgot</router-link></p>
                     </div>
                     <div class="">
                         <button v-bind:disabled="xhrRequest" v-bind:class="{disabled: xhrRequest}" class="">
