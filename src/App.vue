@@ -9,7 +9,7 @@
   <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
     <div class="navbar-nav">
         <li class="nav-item active">
- <router-link class="nav-item nav-link" to="/">Home</router-link>
+ <router-link class="nav-item nav-link" to="/Home">Home</router-link>
        <router-link class="nav-item nav-link" to="/About">Dashboard</router-link>
       <router-link class="nav-item nav-link" to="/login">Login</router-link>
 
@@ -19,6 +19,8 @@
     </div>
   </div>
 </nav>
+
+
        
     </div>
     <div class="container py-4">
@@ -27,6 +29,7 @@
 
 
     </div>
+    
 </template>
 
 <style>

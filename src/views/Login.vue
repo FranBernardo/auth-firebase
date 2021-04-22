@@ -66,7 +66,7 @@ export default {
 
             firebase.auth().signInWithEmailAndPassword(v.email, v.password).then(
                 () => {
-                    this.$router.replace('dashboard')
+                    this.$router.replace('About')
                     v.xhrRequest = false;
                 }, 
                 (error) => {

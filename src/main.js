@@ -1,3 +1,5 @@
+import '@babel/polyfill'
+import 'mutationobserver-shim'
 import { createApp } from "vue";
 import firebase from 'firebase';
 import App from "./App.vue";
